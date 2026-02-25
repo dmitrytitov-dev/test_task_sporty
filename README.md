@@ -1,5 +1,7 @@
 # Sports Leagues
 
+🔗 **[Live demo](https://test-task-sporty.vercel.app/)**
+
 A single-page application that fetches and displays sports leagues from [TheSportsDB](https://www.thesportsdb.com/), with filtering by name and sport type, and a season badge preview on league selection.
 
 
