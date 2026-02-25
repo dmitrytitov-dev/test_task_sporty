@@ -1,11 +1,21 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, computed } from 'vue'
 import { useLeaguesStore } from '@/stores/leagues'
+import { useIsMobile } from '@/composables/useIsMobile'
 import LeagueFilters from '@/components/LeagueFilters.vue'
 import LeagueList from '@/components/LeagueList.vue'
 import LeagueBadgePreview from '@/components/LeagueBadgePreview.vue'
 
 const store = useLeaguesStore()
+const { isMobile } = useIsMobile()
+
+// On mobile, dialog is open whenever a league is selected
+const dialogVisible = computed({
+  get: () => isMobile.value && store.selectedLeagueId !== null,
+  set: (val) => {
+    if (!val) store.selectedLeagueId = null
+  },
+})
 
 onMounted(() => {
   store.loadLeagues()
@@ -31,10 +41,21 @@ onMounted(() => {
         <LeagueList />
       </section>
 
+      <!-- Desktop sidebar badge panel (hidden on mobile) -->
       <aside class="app__badge-panel">
         <LeagueBadgePreview />
       </aside>
     </main>
+
+    <!-- Mobile: badge dialog -->
+    <el-dialog
+      v-model="dialogVisible"
+      :title="store.selectedLeague?.strLeague"
+      width="92%"
+      align-center
+    >
+      <LeagueBadgePreview />
+    </el-dialog>
   </div>
 </template>
 
@@ -85,17 +106,16 @@ onMounted(() => {
   flex: 0 0 320px;
 }
 
-/* Mobile: stack vertically */
+/* Mobile */
 @media (max-width: 720px) {
   .app__content {
     flex-direction: column;
     align-items: stretch;
   }
 
+  /* Hide the sidebar on mobile — badge shown in dialog instead */
   .app__badge-panel {
-    flex: 1 1 auto;
-    width: 100%;
-    position: static;
+    display: none;
   }
 }
 </style>
