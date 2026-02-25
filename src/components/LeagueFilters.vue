@@ -38,18 +38,23 @@ const store = useLeaguesStore()
 .league-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 20px;
   align-items: center;
 }
 
 .filter-search {
-  flex: 1 1 220px;
-  min-width: 180px;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .filter-sport {
-  flex: 0 1 200px;
-  min-width: 160px;
+  /* Match the badge panel width on desktop */
+  flex: 0 0 320px;
+}
+
+/* Make the el-select fill its flex container */
+.filter-sport :deep(.el-select) {
+  width: 100%;
 }
 
 /* On mobile both controls go full width so they match each other */
