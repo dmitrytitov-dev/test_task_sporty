@@ -79,14 +79,10 @@ onMounted(() => {
 .app__league-list {
   flex: 1 1 0;
   min-width: 0;
-  max-height: 75vh;
-  overflow-y: auto;
 }
 
 .app__badge-panel {
   flex: 0 0 320px;
-  position: sticky;
-  top: 16px;
 }
 
 /* Mobile: stack vertically */
