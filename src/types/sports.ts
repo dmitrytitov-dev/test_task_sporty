@@ -14,9 +14,11 @@ export interface AllLeaguesResponse {
 export interface SeasonBadge {
   idLeague: string
   strSeason: string
+  /** URL to the badge image, null if not available */
   strBadge: string | null
 }
 
 export interface SeasonBadgesResponse {
+  /** Null when the API returns no results for the given league */
   seasons: SeasonBadge[] | null
 }
