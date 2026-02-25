@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Loading } from '@element-plus/icons-vue'
 import { useLeaguesStore } from '@/stores/leagues'
 
 const store = useLeaguesStore()
