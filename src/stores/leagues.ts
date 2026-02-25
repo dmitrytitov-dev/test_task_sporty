@@ -33,6 +33,10 @@ export const useLeaguesStore = defineStore('leagues', () => {
       .filter((l) => (selectedSport.value ? l.strSport === selectedSport.value : true))
   })
 
+  const selectedLeague = computed<League | null>(
+    () => leagues.value.find((l) => l.idLeague === selectedLeagueId.value) ?? null,
+  )
+
   // Actions
 
   async function loadLeagues(): Promise<void> {
@@ -83,6 +87,7 @@ export const useLeaguesStore = defineStore('leagues', () => {
     searchQuery,
     selectedSport,
     selectedLeagueId,
+    selectedLeague,
     badgeImageUrl,
     loadingBadge,
     badgeError,
