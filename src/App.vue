@@ -89,6 +89,7 @@ onMounted(() => {
 @media (max-width: 720px) {
   .app__content {
     flex-direction: column;
+    align-items: stretch;
   }
 
   .app__badge-panel {

@@ -51,4 +51,17 @@ const store = useLeaguesStore()
   flex: 0 1 200px;
   min-width: 160px;
 }
+
+/* On mobile both controls go full width so they match each other */
+@media (max-width: 600px) {
+  .filter-search,
+  .filter-sport {
+    flex: 1 1 100%;
+  }
+
+  /* Force Element Plus select wrapper to fill the row */
+  .filter-sport :deep(.el-select) {
+    width: 100%;
+  }
+}
 </style>

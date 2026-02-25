@@ -33,6 +33,8 @@ function handleClick() {
 
 <style scoped>
 .league-item {
+  width: 100%;
+  box-sizing: border-box;
   padding: 10px 14px;
   border-radius: 6px;
   cursor: pointer;
