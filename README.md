@@ -1,48 +1,28 @@
-# test_task_sporty
+# Sports Leagues
 
-This template should help get you started developing with Vue 3 in Vite.
+A single-page application that fetches and displays sports leagues from [TheSportsDB](https://www.thesportsdb.com/), with filtering by name and sport type, and a season badge preview on league selection.
 
-## Recommended IDE Setup
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+## Getting Started
 
 ```sh
 pnpm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 pnpm dev
 ```
 
-### Type-Check, Compile and Minify for Production
+No environment variables required.
 
-```sh
-pnpm build
-```
 
-### Lint with [ESLint](https://eslint.org/)
+## Design Decisions
 
-```sh
-pnpm lint
-```
+- **Vue 3** + Vite + TypeScript
+- **Pinia** — centralized state management
+- **Element Plus** — UI component library
+
+
+## AI Tools Used
+
+I used AI tools to accelerate execution while keeping full ownership of the final solution.
+
+- ChatGPT: requirement breakdown → task checklist ([docs/TASKS.md](docs/TASKS.md)).
+- Claud Code: implemented scoped tasks one-by-one; I reviewed changes and tested the application.
